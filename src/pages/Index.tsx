@@ -93,15 +93,6 @@ const Index = () => {
           </div>
         </div>
       </div>
-
-      {/* Right side rocket image */}
-      <div className="w-64 p-6 hidden lg:flex flex-col items-center justify-center">
-        <img
-          src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e"
-          alt="Robot Building"
-          className="w-full h-auto rounded-lg shadow-lg animate-float"
-        />
-      </div>
     </div>
   );
 };
