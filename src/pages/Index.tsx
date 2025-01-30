@@ -83,7 +83,7 @@ const Index = () => {
             </div>
             <input
               type="text"
-              placeholder="Lets build your amazing startup"
+              placeholder="Lets build your amazing startup 🚀"
               className="flex-1 p-4 pl-12 rounded-full border border-gray-200 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all bg-transparent"
             />
             <button className="bg-primary text-white p-4 rounded-full hover:bg-primary/90 transition-colors flex items-center gap-2">
