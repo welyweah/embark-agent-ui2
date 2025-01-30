@@ -33,7 +33,7 @@ const Index = () => {
           <img
             src="/lovable-uploads/c1ded814-b1d4-457e-846e-52388a54eff8.png"
             alt="Embark Law"
-            className="h-8"
+            className="h-12" // Changed from h-8 to h-12 to make the icon bigger
           />
         </div>
 
