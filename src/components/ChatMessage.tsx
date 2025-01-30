@@ -17,7 +17,7 @@ export const ChatMessage = ({ message, isUser }: ChatMessageProps) => {
         className={`max-w-[70%] ${
           isUser
             ? "bg-primary text-white p-4 rounded-2xl rounded-tr-none"
-            : "text-gray-800"
+            : "bg-transparent border border-gray-200 rounded-2xl text-gray-800 p-4"
         }`}
       >
         <p className="text-sm">{message}</p>
