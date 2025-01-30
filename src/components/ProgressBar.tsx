@@ -17,15 +17,15 @@ export const ProgressBar = ({ progress }: ProgressBarProps) => {
   const currentStage = Math.floor((progress / 100) * stages.length);
 
   return (
-    <div className="h-full flex flex-col items-center justify-center gap-8">
-      <div className="h-full w-2 bg-gray-100 rounded-full relative">
+    <div className="w-full flex flex-col items-center gap-4 bg-white p-6 border-b">
+      <div className="w-full h-2 bg-gray-100 rounded-full relative">
         <div
-          className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-primary to-primary/50 rounded-full transition-all duration-500"
-          style={{ height: `${progress}%` }}
+          className="absolute top-0 left-0 h-full bg-gradient-to-r from-primary to-primary/50 rounded-full transition-all duration-500"
+          style={{ width: `${progress}%` }}
         />
       </div>
       
-      <div className="flex flex-col gap-6">
+      <div className="flex justify-between w-full">
         {stages.map((stage, index) => {
           const Icon = stage.icon;
           const isActive = index <= currentStage;
