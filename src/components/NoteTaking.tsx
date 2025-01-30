@@ -17,7 +17,7 @@ export const NoteTaking = () => {
           value={notes}
           onChange={(e) => setNotes(e.target.value)}
           placeholder="Take notes here..."
-          className="min-h-[200px] resize-none"
+          className="min-h-[400px] resize-none"
         />
       </div>
     </div>
