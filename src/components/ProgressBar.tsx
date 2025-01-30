@@ -6,11 +6,12 @@ interface ProgressBarProps {
 }
 
 const stages = [
-  { icon: House, label: "Start" },
-  { icon: HousePlus, label: "Discovery" },
-  { icon: MapPinHouse, label: "Planning" },
-  { icon: House, label: "Execution" },
-  { icon: CircleCheck, label: "Complete" },
+  { icon: House, label: "Startup Information" },
+  { icon: HousePlus, label: "Shareholding" },
+  { icon: MapPinHouse, label: "Vesting Agreements" },
+  { icon: House, label: "Intellectual Property" },
+  { icon: House, label: "Employment Agreements" },
+  { icon: CircleCheck, label: "Closing Details" },
 ];
 
 export const ProgressBar = ({ progress }: ProgressBarProps) => {
