@@ -17,7 +17,7 @@ export const ProgressBar = ({ progress }: ProgressBarProps) => {
   const currentStage = Math.floor((progress / 100) * stages.length);
 
   return (
-    <div className="h-full flex flex-col items-center gap-8">
+    <div className="h-full flex flex-col items-center justify-center gap-8">
       <div className="h-full w-2 bg-gray-100 rounded-full relative">
         <div
           className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-primary to-primary/50 rounded-full transition-all duration-500"
