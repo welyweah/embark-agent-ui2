@@ -1,4 +1,4 @@
-import { Circle, CircleCheck, CircleDot, CirclePlus, Square } from "lucide-react";
+import { House, HousePlus, MapPinHouse, Circle, CircleCheck } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface ProgressBarProps {
@@ -6,10 +6,10 @@ interface ProgressBarProps {
 }
 
 const stages = [
-  { icon: Circle, label: "Start" },
-  { icon: CircleDot, label: "Discovery" },
-  { icon: CirclePlus, label: "Planning" },
-  { icon: Square, label: "Execution" },
+  { icon: House, label: "Start" },
+  { icon: HousePlus, label: "Discovery" },
+  { icon: MapPinHouse, label: "Planning" },
+  { icon: House, label: "Execution" },
   { icon: CircleCheck, label: "Complete" },
 ];
 
