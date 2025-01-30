@@ -3,6 +3,9 @@ import { FactBubble } from "@/components/FactBubble";
 import { ProgressBar } from "@/components/ProgressBar";
 import { ChatMessage } from "@/components/ChatMessage";
 import { MessageSquare, Sparkles, Send } from "lucide-react";
+import { VerticalProgressBar } from "@/components/VerticalProgressBar";
+import { NoteTaking } from "@/components/NoteTaking";
+import { EmailForm } from "@/components/EmailForm";
 
 const facts = [
   "Our AI is trained on millions of conversations",
@@ -33,7 +36,7 @@ const Index = () => {
       </div>
 
       {/* Main chat area */}
-      <div className="flex-1 flex flex-col max-w-4xl mx-auto w-full">
+      <div className="flex-1 flex flex-col max-w-4xl w-full">
         {/* Header */}
         <div className="p-6 flex items-center border-b">
           <div className="flex items-center gap-3">
@@ -92,6 +95,13 @@ const Index = () => {
             Press Enter to send your message
           </div>
         </div>
+      </div>
+
+      {/* Right sidebar */}
+      <div className="w-80 p-6 hidden xl:flex flex-col gap-6 border-l">
+        <VerticalProgressBar progress={65} />
+        <NoteTaking />
+        <EmailForm />
       </div>
     </div>
   );
