@@ -27,7 +27,7 @@ const Index = () => {
       </div>
 
       {/* Main chat area */}
-      <div className="flex-1 flex flex-col max-w-4xl mx-auto w-full">
+      <div className="flex-1 flex flex-col max-w-4xl mx-auto w-full pr-24">
         {/* Header */}
         <div className="p-6 flex items-center border-b bg-white">
           <div className="flex items-center gap-3">
@@ -67,7 +67,7 @@ const Index = () => {
       </div>
 
       {/* Right progress bar */}
-      <div className="w-16 p-6 hidden lg:flex justify-center">
+      <div className="w-24 p-6 hidden lg:flex justify-center fixed right-0 top-0 bottom-0">
         <ProgressBar progress={65} />
       </div>
     </div>
