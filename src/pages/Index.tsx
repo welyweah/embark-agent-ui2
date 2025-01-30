@@ -2,7 +2,7 @@ import { useState } from "react";
 import { FactBubble } from "@/components/FactBubble";
 import { ProgressBar } from "@/components/ProgressBar";
 import { ChatMessage } from "@/components/ChatMessage";
-import { MessageSquare } from "lucide-react";
+import { MessageSquare, Sparkles, Send } from "lucide-react";
 
 const facts = [
   "Our AI is trained on millions of conversations",
@@ -56,15 +56,22 @@ const Index = () => {
 
         {/* Input area */}
         <div className="p-6 border-t bg-white">
-          <div className="flex gap-4 items-center max-w-3xl mx-auto">
+          <div className="flex gap-4 items-center max-w-3xl mx-auto relative">
+            <div className="absolute left-4 text-gray-400">
+              <Sparkles className="w-5 h-5" />
+            </div>
             <input
               type="text"
-              placeholder="Type your message..."
-              className="flex-1 p-4 rounded-full border border-gray-200 focus:outline-none focus:border-primary"
+              placeholder="Ask me anything..."
+              className="flex-1 p-4 pl-12 rounded-full border border-gray-200 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
             />
-            <button className="bg-primary text-white p-4 rounded-full hover:bg-primary/90 transition-colors">
-              <MessageSquare className="w-5 h-5" />
+            <button className="bg-primary text-white p-4 rounded-full hover:bg-primary/90 transition-colors flex items-center gap-2">
+              <Send className="w-5 h-5" />
+              <span className="hidden sm:inline">Send</span>
             </button>
+          </div>
+          <div className="mt-2 text-center text-sm text-gray-500">
+            Press Enter to send your message
           </div>
         </div>
       </div>
