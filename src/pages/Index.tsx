@@ -10,6 +10,12 @@ const facts = [
   "Get instant responses 24/7",
 ];
 
+const suggestions = [
+  "How do I start a company?",
+  "What's the best business structure?",
+  "How to write a business plan?",
+];
+
 const Index = () => {
   const [messages] = useState([
     { text: "Hello! How can I help you today?", isUser: false },
@@ -56,6 +62,18 @@ const Index = () => {
 
         {/* Input area */}
         <div className="p-6">
+          {/* Suggestion bubbles */}
+          <div className="flex flex-wrap gap-2 mb-4 justify-center">
+            {suggestions.map((suggestion, index) => (
+              <button
+                key={index}
+                className="px-4 py-2 text-sm bg-gray-50 text-gray-600 rounded-full hover:bg-gray-100 transition-colors border border-gray-200"
+              >
+                {suggestion}
+              </button>
+            ))}
+          </div>
+
           <div className="flex gap-4 items-center max-w-3xl mx-auto relative">
             <div className="absolute left-4 text-gray-400">
               <Sparkles className="w-5 h-5" />
