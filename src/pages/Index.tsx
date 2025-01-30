@@ -88,7 +88,6 @@ const Index = () => {
             />
             <button className="bg-primary text-white p-4 rounded-full hover:bg-primary/90 transition-colors flex items-center gap-2">
               <Send className="w-5 h-5" />
-              <span className="hidden sm:inline">Send</span>
             </button>
           </div>
           <div className="mt-2 text-center text-sm text-gray-500">
