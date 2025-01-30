@@ -29,12 +29,15 @@ const Index = () => {
       {/* Main chat area */}
       <div className="flex-1 flex flex-col max-w-4xl mx-auto w-full">
         {/* Header */}
-        <div className="p-6 flex items-center justify-center border-b bg-white">
-          <img
-            src="/lovable-uploads/c1ded814-b1d4-457e-846e-52388a54eff8.png"
-            alt="Embark Law"
-            className="h-12" // Changed from h-8 to h-12 to make the icon bigger
-          />
+        <div className="p-6 flex items-center border-b bg-white">
+          <div className="flex items-center gap-3">
+            <img
+              src="/lovable-uploads/c1ded814-b1d4-457e-846e-52388a54eff8.png"
+              alt="Embark Law"
+              className="h-12"
+            />
+            <span className="text-xl font-semibold text-gray-900">Startup Agent</span>
+          </div>
         </div>
 
         {/* Chat messages */}
