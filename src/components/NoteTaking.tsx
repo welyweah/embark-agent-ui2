@@ -1,18 +1,9 @@
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { PenLine, Save } from "lucide-react";
+import { PenLine } from "lucide-react";
+import { Textarea } from "@/components/ui/textarea";
 
 export const NoteTaking = () => {
-  const [notes, setNotes] = useState<string[]>([]);
-  const [currentNote, setCurrentNote] = useState("");
-
-  const handleAddNote = () => {
-    if (currentNote.trim()) {
-      setNotes([...notes, currentNote.trim()]);
-      setCurrentNote("");
-    }
-  };
+  const [notes, setNotes] = useState("");
 
   return (
     <div className="bg-white p-4 rounded-lg border">
@@ -22,25 +13,12 @@ export const NoteTaking = () => {
       </div>
       
       <div className="space-y-4">
-        <div className="flex gap-2">
-          <Input
-            value={currentNote}
-            onChange={(e) => setCurrentNote(e.target.value)}
-            placeholder="Add a note..."
-            className="flex-1"
-          />
-          <Button onClick={handleAddNote} size="sm">
-            <Save className="w-4 h-4" />
-          </Button>
-        </div>
-        
-        <div className="space-y-2 max-h-[200px] overflow-y-auto">
-          {notes.map((note, index) => (
-            <div key={index} className="p-2 bg-gray-50 rounded text-sm">
-              {note}
-            </div>
-          ))}
-        </div>
+        <Textarea
+          value={notes}
+          onChange={(e) => setNotes(e.target.value)}
+          placeholder="Take notes here..."
+          className="min-h-[200px] resize-none"
+        />
       </div>
     </div>
   );
