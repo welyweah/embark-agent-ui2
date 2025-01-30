@@ -14,10 +14,10 @@ export const ChatMessage = ({ message, isUser }: ChatMessageProps) => {
         />
       )}
       <div
-        className={`max-w-[70%] p-4 ${
+        className={`max-w-[70%] ${
           isUser
-            ? "bg-primary text-white rounded-2xl rounded-tr-none"
-            : "bg-transparent border border-gray-200 rounded-2xl text-gray-800"
+            ? "bg-primary text-white p-4 rounded-2xl rounded-tr-none"
+            : "text-gray-800"
         }`}
       >
         <p className="text-sm">{message}</p>
