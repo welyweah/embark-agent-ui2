@@ -96,7 +96,7 @@ const Index = () => {
               <input
                 type="text"
                 placeholder="Lets build your amazing startup 🚀"
-                className="flex-1 p-4 pl-12 rounded-full border-2 border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all bg-transparent shadow-sm hover:shadow-md"
+                className="flex-1 p-4 pl-12 rounded-full border border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all bg-transparent shadow-sm hover:shadow-md"
               />
               <button className="bg-primary text-white p-4 rounded-full hover:bg-primary/90 transition-all duration-300 flex items-center gap-2 shadow-lg hover:shadow-xl hover:scale-105">
                 <Bot className="w-5 h-5" />
