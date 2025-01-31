@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FactBubble } from "@/components/FactBubble";
+import { ProgressBar } from "@/components/ProgressBar";
 import { ChatMessage } from "@/components/ChatMessage";
 import { MessageSquare, Sparkles, Send } from "lucide-react";
 import { VerticalProgressBar } from "@/components/VerticalProgressBar";
@@ -47,6 +48,9 @@ const Index = () => {
             <span className="text-xl font-semibold text-gray-900">Startup Agent</span>
           </div>
         </div>
+
+        {/* Progress Bar */}
+        <ProgressBar progress={65} />
 
         {/* Chat messages */}
         <div className="flex-1 overflow-y-auto p-6">
