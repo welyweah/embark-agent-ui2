@@ -27,7 +27,7 @@ const Index = () => {
   ]);
 
   return (
-    <div className="min-h-screen bg-white flex">
+    <div className="min-h-screen bg-white flex justify-between">
       {/* Left sidebar with facts */}
       <div className="w-64 p-6 hidden lg:flex flex-col gap-6">
         {facts.map((fact, index) => (
@@ -36,7 +36,7 @@ const Index = () => {
       </div>
 
       {/* Main chat area */}
-      <div className="flex-1 flex flex-col max-w-4xl w-full">
+      <div className="flex-1 flex flex-col max-w-4xl">
         {/* Header */}
         <div className="p-6 flex items-center border-b">
           <div className="flex items-center gap-3">
