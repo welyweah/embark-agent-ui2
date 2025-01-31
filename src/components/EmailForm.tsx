@@ -10,7 +10,6 @@ export const EmailForm = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would typically integrate with an email service
     console.log("Sending chat history and notes to:", email);
     toast({
       title: "Success!",
@@ -20,10 +19,12 @@ export const EmailForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="bg-white p-4 rounded-lg border">
-      <div className="flex items-center gap-2 mb-4">
-        <Mail className="w-5 h-5 text-primary" />
-        <h3 className="font-semibold">Send to Email</h3>
+    <form onSubmit={handleSubmit} className="bg-white p-6 rounded-xl border shadow-sm hover:shadow-md transition-shadow duration-200">
+      <div className="flex items-center gap-3 mb-4">
+        <div className="bg-primary/10 p-2 rounded-lg">
+          <Mail className="w-5 h-5 text-primary" />
+        </div>
+        <h3 className="font-semibold text-gray-900">Send to Email</h3>
       </div>
       
       <div className="flex gap-2">
@@ -33,9 +34,9 @@ export const EmailForm = () => {
           onChange={(e) => setEmail(e.target.value)}
           placeholder="Enter your email..."
           required
-          className="flex-1"
+          className="flex-1 focus:ring-primary/20"
         />
-        <Button type="submit" size="sm">
+        <Button type="submit" size="sm" className="px-6 shadow-lg hover:shadow-xl transition-shadow duration-200">
           Send
         </Button>
       </div>

@@ -30,19 +30,22 @@ export function ProgressBar({ progress = 0, className }: ProgressBarProps) {
             return (
               <div
                 key={index}
-                className="flex flex-col items-center"
+                className="flex flex-col items-center group"
               >
                 <div
                   className={cn(
-                    "rounded-full p-2",
+                    "rounded-full p-2.5 transition-all duration-300 transform hover:scale-110",
                     isCompleted
-                      ? "bg-primary text-primary-foreground"
+                      ? "bg-primary text-primary-foreground shadow-lg"
                       : isCurrent
-                      ? "bg-primary/20 text-primary"
-                      : "bg-muted text-muted-foreground"
+                      ? "bg-primary/20 text-primary ring-2 ring-primary/30"
+                      : "bg-muted text-muted-foreground hover:bg-muted/80"
                   )}
                 >
-                  <Icon className="w-5 h-5" />
+                  <Icon className="w-6 h-6" />
+                </div>
+                <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-200 absolute mt-16 bg-white px-3 py-1.5 rounded-md shadow-lg text-sm">
+                  {stage.name}
                 </div>
               </div>
             );
