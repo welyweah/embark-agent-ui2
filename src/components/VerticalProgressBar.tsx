@@ -45,10 +45,6 @@ export const VerticalProgressBar = ({ progress }: VerticalProgressBarProps) => {
                 <div className="flex gap-1 mr-2">
                   <div className={cn(
                     "w-2 h-2 rounded-full",
-                    isActive ? "bg-[#F97316]" : "bg-[#F97316]/20"
-                  )} />
-                  <div className={cn(
-                    "w-2 h-2 rounded-full",
                     isActive ? "bg-[#FACC15]" : "bg-[#FACC15]/20"
                   )} />
                   <div className={cn(
