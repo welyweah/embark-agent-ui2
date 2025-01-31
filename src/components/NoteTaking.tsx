@@ -9,7 +9,7 @@ export const NoteTaking = () => {
     <div className="bg-white p-4 rounded-lg border">
       <div className="flex items-center gap-2 mb-4">
         <PenLine className="w-5 h-5 text-primary" />
-        <h3 className="font-semibold">Notes</h3>
+        <h3 className="font-semibold">Your Notes</h3>
       </div>
       
       <div className="space-y-4">
