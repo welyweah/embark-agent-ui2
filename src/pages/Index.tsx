@@ -7,7 +7,7 @@ import { VerticalProgressBar } from "@/components/VerticalProgressBar";
 import { NoteTaking } from "@/components/NoteTaking";
 import { EmailForm } from "@/components/EmailForm";
 
-const facts = [
+const initialFacts = [
   "Welcome to fact bubbles, we are here to help you throughout the process so you focus on building your exciting start-up :)",
   "Did you know Embark.Law is one of the most innovative startup laywers in Switzerland?",
   "We will appear at time to explain complex concepts that you might not be familiar with",
@@ -27,6 +27,12 @@ const Index = () => {
     { text: "I'd be happy to help! What kind of project are you working on?", isUser: false },
   ]);
 
+  const [facts, setFacts] = useState(initialFacts);
+
+  const handleDismissFact = (index: number) => {
+    setFacts(facts.filter((_, i) => i !== index));
+  };
+
   return (
     <div className="min-h-screen bg-white relative">
       {/* Background image with overlay */}
@@ -44,7 +50,11 @@ const Index = () => {
         {/* Left sidebar with facts */}
         <div className="w-72 p-8 hidden lg:flex flex-col gap-8">
           {facts.map((fact, index) => (
-            <FactBubble key={index} fact={fact} />
+            <FactBubble 
+              key={index} 
+              fact={fact} 
+              onDismiss={() => handleDismissFact(index)}
+            />
           ))}
         </div>
 
