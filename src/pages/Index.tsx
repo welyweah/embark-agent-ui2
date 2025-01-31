@@ -2,7 +2,7 @@ import { useState } from "react";
 import { FactBubble } from "@/components/FactBubble";
 import { ProgressBar } from "@/components/ProgressBar";
 import { ChatMessage } from "@/components/ChatMessage";
-import { MessageSquare, Sparkles, Bot } from "lucide-react";
+import { Bot, Sparkles } from "lucide-react";
 import { VerticalProgressBar } from "@/components/VerticalProgressBar";
 import { NoteTaking } from "@/components/NoteTaking";
 import { EmailForm } from "@/components/EmailForm";
@@ -37,7 +37,6 @@ const Index = () => {
     if (inputValue.trim()) {
       setMessages([...messages, { text: inputValue, isUser: true }]);
       setInputValue("");
-      // Simulate AI response
       setTimeout(() => {
         setMessages(prev => [...prev, {
           text: "I understand. Could you tell me more about your specific needs?",
@@ -68,16 +67,20 @@ const Index = () => {
         </div>
 
         {/* Main chat area */}
-        <div className="flex-1 flex flex-col max-w-4xl">
+        <div className="flex-1 flex flex-col max-w-4xl bg-white/50 backdrop-blur-sm shadow-lg rounded-lg mx-4 my-4">
           {/* Header */}
-          <div className="p-8 flex items-center shadow-sm">
+          <div className="p-6 flex items-center border-b border-gray-100">
             <div className="flex items-center gap-4">
-              <img
-                src="/lovable-uploads/c1ded814-b1d4-457e-846e-52388a54eff8.png"
-                alt="Embark Law"
-                className="h-14 transition-transform duration-300 hover:scale-105"
-              />
-              <span className="text-2xl font-semibold">Startup Agent</span>
+              <div className="p-2 bg-primary/5 rounded-lg transition-transform duration-300 hover:scale-105">
+                <img
+                  src="/lovable-uploads/c1ded814-b1d4-457e-846e-52388a54eff8.png"
+                  alt="Embark Law"
+                  className="h-12 w-12"
+                />
+              </div>
+              <span className="text-2xl font-semibold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+                Startup Agent
+              </span>
             </div>
           </div>
 
@@ -85,7 +88,7 @@ const Index = () => {
           <ProgressBar progress={65} className="mt-2" />
 
           {/* Chat messages - Only showing the latest message */}
-          <div className="flex-1 overflow-y-auto p-8">
+          <div className="flex-1 overflow-y-auto p-8 bg-gradient-to-b from-white/50 to-white/30">
             {messages.length > 0 && (
               <ChatMessage
                 message={messages[messages.length - 1].text}
@@ -95,13 +98,13 @@ const Index = () => {
           </div>
 
           {/* Input area */}
-          <div className="p-8">
+          <div className="p-6 bg-white/70 backdrop-blur-md rounded-b-lg border-t border-gray-100">
             {/* Suggestion bubbles */}
             <div className="flex flex-wrap gap-3 mb-6 justify-center">
               {suggestions.map((suggestion, index) => (
                 <button
                   key={index}
-                  className="px-5 py-2.5 text-sm bg-secondary text-secondary-foreground rounded-full hover:bg-secondary/80 transition-all duration-300 hover:shadow-md"
+                  className="px-5 py-2.5 text-sm bg-white/80 hover:bg-white text-gray-700 rounded-full hover:shadow-md transition-all duration-300 border border-gray-100"
                   onClick={() => {
                     setInputValue(suggestion);
                   }}
@@ -112,19 +115,19 @@ const Index = () => {
             </div>
 
             <div className="flex gap-4 items-center max-w-3xl mx-auto relative">
-              <div className="absolute left-4 text-muted-foreground">
+              <div className="absolute left-4 text-primary/60">
                 <Sparkles className="w-5 h-5" />
               </div>
               <input
                 type="text"
                 placeholder="Lets build your amazing startup 🚀"
-                className="flex-1 p-4 pl-12 rounded-full border border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all bg-background shadow-sm hover:shadow-md"
+                className="flex-1 p-4 pl-12 rounded-full border border-primary/20 focus:border-primary/40 focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all bg-white/80 backdrop-blur-sm shadow-sm hover:shadow-md"
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
                 onKeyPress={handleKeyPress}
               />
               <button 
-                className="bg-primary text-primary-foreground p-4 rounded-full hover:bg-primary/90 transition-all duration-300 flex items-center gap-2 shadow-lg hover:shadow-xl hover:scale-105"
+                className="bg-primary text-white p-4 rounded-full hover:bg-primary/90 transition-all duration-300 flex items-center gap-2 shadow-lg hover:shadow-xl hover:scale-105 active:scale-95"
                 onClick={handleSendMessage}
               >
                 <Bot className="w-5 h-5" />
