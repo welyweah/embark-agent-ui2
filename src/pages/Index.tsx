@@ -84,15 +84,14 @@ const Index = () => {
           {/* Progress Bar */}
           <ProgressBar progress={65} className="mt-2" />
 
-          {/* Chat messages */}
+          {/* Chat messages - Only showing the latest message */}
           <div className="flex-1 overflow-y-auto p-8">
-            {messages.map((message, index) => (
+            {messages.length > 0 && (
               <ChatMessage
-                key={index}
-                message={message.text}
-                isUser={message.isUser}
+                message={messages[messages.length - 1].text}
+                isUser={messages[messages.length - 1].isUser}
               />
-            ))}
+            )}
           </div>
 
           {/* Input area */}
