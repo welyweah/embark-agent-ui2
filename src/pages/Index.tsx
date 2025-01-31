@@ -8,15 +8,16 @@ import { NoteTaking } from "@/components/NoteTaking";
 import { EmailForm } from "@/components/EmailForm";
 
 const facts = [
-  "Our AI is trained on millions of conversations",
-  "We use advanced natural language processing",
-  "Get instant responses 24/7",
+  "Welcome to fact bubbles, we are here to help you throughout the process so you focus on building your exciting start-up :)",
+  "Did you know Embark.Law is one of the most innovative startup laywers in Switzerland?",
+  "We will appear at time to explain complex concepts that you might not be familiar with",
+  "Did you know 'Vesting Agreemnts' are needed to make sure each shareholder applies to a number of rules before taking out shares, its important, but dont worry we have excellent suggestions ",
 ];
 
 const suggestions = [
-  "How do I start a company?",
-  "What's the best business structure?",
-  "How to write a business plan?",
+  "What are the types of companies?",
+  "What's the best shareholder structure?",
+  "What is the cost of setting a startup?",
 ];
 
 const Index = () => {
