@@ -42,7 +42,7 @@ const Index = () => {
       
       <div className="relative z-10 flex justify-between">
         {/* Left sidebar with facts */}
-        <div className="w-64 p-6 hidden lg:flex flex-col gap-6">
+        <div className="w-72 p-8 hidden lg:flex flex-col gap-8">
           {facts.map((fact, index) => (
             <FactBubble key={index} fact={fact} />
           ))}
@@ -51,22 +51,22 @@ const Index = () => {
         {/* Main chat area */}
         <div className="flex-1 flex flex-col max-w-4xl bg-white/80 backdrop-blur-sm">
           {/* Header */}
-          <div className="p-6 flex items-center border-b bg-white">
-            <div className="flex items-center gap-3">
+          <div className="p-8 flex items-center border-b bg-white/95 backdrop-blur-sm shadow-sm">
+            <div className="flex items-center gap-4">
               <img
                 src="/lovable-uploads/c1ded814-b1d4-457e-846e-52388a54eff8.png"
                 alt="Embark Law"
-                className="h-12"
+                className="h-14 transition-transform duration-300 hover:scale-105"
               />
-              <span className="text-xl font-semibold text-gray-900">Startup Agent</span>
+              <span className="text-2xl font-semibold text-gray-900">Startup Agent</span>
             </div>
           </div>
 
           {/* Progress Bar */}
-          <ProgressBar progress={65} />
+          <ProgressBar progress={65} className="mt-2" />
 
           {/* Chat messages */}
-          <div className="flex-1 overflow-y-auto p-6">
+          <div className="flex-1 overflow-y-auto p-8">
             {messages.map((message, index) => (
               <ChatMessage
                 key={index}
@@ -77,13 +77,13 @@ const Index = () => {
           </div>
 
           {/* Input area */}
-          <div className="p-6 bg-white">
+          <div className="p-8 bg-white/95 backdrop-blur-sm border-t">
             {/* Suggestion bubbles */}
-            <div className="flex flex-wrap gap-2 mb-4 justify-center">
+            <div className="flex flex-wrap gap-3 mb-6 justify-center">
               {suggestions.map((suggestion, index) => (
                 <button
                   key={index}
-                  className="px-4 py-2 text-sm bg-gray-50 text-gray-600 rounded-full hover:bg-gray-100 transition-colors border border-gray-200"
+                  className="px-5 py-2.5 text-sm bg-gray-50 text-gray-600 rounded-full hover:bg-gray-100 transition-all duration-300 hover:shadow-md border border-gray-200/80 hover:border-gray-300"
                 >
                   {suggestion}
                 </button>
@@ -97,20 +97,20 @@ const Index = () => {
               <input
                 type="text"
                 placeholder="Lets build your amazing startup 🚀"
-                className="flex-1 p-4 pl-12 rounded-full border border-gray-200 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all bg-transparent"
+                className="flex-1 p-4 pl-12 rounded-full border border-gray-200 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all bg-transparent shadow-sm hover:shadow-md"
               />
-              <button className="bg-primary text-white p-4 rounded-full hover:bg-primary/90 transition-colors flex items-center gap-2">
+              <button className="bg-primary text-white p-4 rounded-full hover:bg-primary/90 transition-all duration-300 flex items-center gap-2 shadow-lg hover:shadow-xl hover:scale-105">
                 <Bot className="w-5 h-5" />
               </button>
             </div>
-            <div className="mt-2 text-center text-sm text-gray-500">
+            <div className="mt-3 text-center text-sm text-gray-500">
               Press Enter to send your message
             </div>
           </div>
         </div>
 
         {/* Right sidebar */}
-        <div className="w-80 p-6 hidden xl:flex flex-col gap-6 border-l bg-white">
+        <div className="w-96 p-8 hidden xl:flex flex-col gap-8 border-l bg-white/95 backdrop-blur-sm">
           <VerticalProgressBar progress={65} />
           <NoteTaking />
           <EmailForm />
