@@ -6,7 +6,7 @@ export const NoteTaking = () => {
   const [notes, setNotes] = useState("");
 
   return (
-    <div className="bg-white p-6 rounded-xl border shadow-sm hover:shadow-md transition-shadow duration-200">
+    <div className="bg-white/80 backdrop-blur-sm p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-200">
       <div className="flex items-center gap-3 mb-4">
         <div className="bg-primary/10 p-2 rounded-lg">
           <PenLine className="w-5 h-5 text-primary" />

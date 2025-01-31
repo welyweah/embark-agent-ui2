@@ -61,7 +61,7 @@ const Index = () => {
         {/* Main chat area */}
         <div className="flex-1 flex flex-col max-w-4xl bg-white/80 backdrop-blur-sm">
           {/* Header */}
-          <div className="p-8 flex items-center border-b bg-white/95 backdrop-blur-sm shadow-sm">
+          <div className="p-8 flex items-center bg-white/95 backdrop-blur-sm shadow-sm">
             <div className="flex items-center gap-4">
               <img
                 src="/lovable-uploads/c1ded814-b1d4-457e-846e-52388a54eff8.png"
@@ -87,13 +87,13 @@ const Index = () => {
           </div>
 
           {/* Input area */}
-          <div className="p-8 bg-white/95 backdrop-blur-sm border-t">
+          <div className="p-8 bg-white/95 backdrop-blur-sm">
             {/* Suggestion bubbles */}
             <div className="flex flex-wrap gap-3 mb-6 justify-center">
               {suggestions.map((suggestion, index) => (
                 <button
                   key={index}
-                  className="px-5 py-2.5 text-sm bg-gray-50 text-gray-600 rounded-full hover:bg-gray-100 transition-all duration-300 hover:shadow-md border border-gray-200/80 hover:border-gray-300"
+                  className="px-5 py-2.5 text-sm bg-gray-50 text-gray-600 rounded-full hover:bg-gray-100 transition-all duration-300 hover:shadow-md"
                 >
                   {suggestion}
                 </button>
@@ -107,7 +107,7 @@ const Index = () => {
               <input
                 type="text"
                 placeholder="Lets build your amazing startup 🚀"
-                className="flex-1 p-4 pl-12 rounded-full border border-gray-200 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all bg-transparent shadow-sm hover:shadow-md"
+                className="flex-1 p-4 pl-12 rounded-full focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all bg-transparent shadow-sm hover:shadow-md"
               />
               <button className="bg-primary text-white p-4 rounded-full hover:bg-primary/90 transition-all duration-300 flex items-center gap-2 shadow-lg hover:shadow-xl hover:scale-105">
                 <Bot className="w-5 h-5" />
@@ -120,7 +120,7 @@ const Index = () => {
         </div>
 
         {/* Right sidebar */}
-        <div className="w-96 p-8 hidden xl:flex flex-col gap-8 border-l bg-white/95 backdrop-blur-sm">
+        <div className="w-96 p-8 hidden xl:flex flex-col gap-8 bg-white/95 backdrop-blur-sm">
           <VerticalProgressBar progress={65} />
           <NoteTaking />
           <EmailForm />
