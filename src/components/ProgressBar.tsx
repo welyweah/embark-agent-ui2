@@ -19,7 +19,7 @@ export function ProgressBar({ progress = 0, className }: ProgressBarProps) {
   const currentStage = Math.floor((progress / 100) * stages.length);
 
   return (
-    <div className={cn("w-full px-4", className)}>
+    <div className={cn("w-full px-4 pt-6", className)}>
       <div className="flex justify-between items-center">
         {stages.map((stage, index) => {
           const Icon = stage.icon;
