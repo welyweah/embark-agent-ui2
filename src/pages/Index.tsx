@@ -35,17 +35,6 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-white relative">
-      {/* Background image with overlay */}
-      <div 
-        className="absolute inset-0 z-0"
-        style={{
-          backgroundImage: "url('https://images.unsplash.com/photo-1553877522-43269d4ea984')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          opacity: 0.05
-        }}
-      />
-      
       <div className="relative z-10 flex justify-between">
         {/* Left sidebar with facts */}
         <div className="w-72 p-8 hidden lg:flex flex-col gap-8">
