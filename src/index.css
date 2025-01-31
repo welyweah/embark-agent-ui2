@@ -108,7 +108,7 @@
 
 /* Root layout */
 #root {
-  @apply max-w-[1280px] mx-auto p-8;
+  @apply w-full max-w-none p-0;
 }
 
 /* Logo styles */
