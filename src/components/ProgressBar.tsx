@@ -1,50 +1,52 @@
-import { House, CircleCheck, Lightbulb, Trees, User, Banknote } from "lucide-react";
+import { House, Lightbulb, Trees, User, Banknote } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface ProgressBarProps {
-  progress: number;
+  progress?: number;
+  className?: string;
 }
 
-const stages = [
-  { icon: House, label: "Startup Information" },
-  { icon: Banknote, label: "Shareholding" },
-  { icon: Trees, label: "Vesting Agreements" },
-  { icon: Lightbulb, label: "Intellectual Property" },
-  { icon: User, label: "Employment Agreements" },
-  { icon: CircleCheck, label: "Closing Details" },
-];
+export function ProgressBar({ progress = 0, className }: ProgressBarProps) {
+  const stages = [
+    { name: "Startup Information", icon: House },
+    { name: "Shareholding", icon: Banknote },
+    { name: "Vesting Agreements", icon: Trees },
+    { name: "Intellectual Property", icon: Lightbulb },
+    { name: "Employment Agreements", icon: User },
+    { name: "Closing Details", icon: House },
+  ];
 
-export const ProgressBar = ({ progress }: ProgressBarProps) => {
   const currentStage = Math.floor((progress / 100) * stages.length);
 
   return (
-    <div className="w-full flex flex-col items-center gap-4 bg-white p-6 border-b">
-      <div className="w-full h-2 bg-gray-100 rounded-full relative">
-        <div
-          className="absolute top-0 left-0 h-full bg-gradient-to-r from-primary to-primary/50 rounded-full transition-all duration-500"
-          style={{ width: `${progress}%` }}
-        />
-      </div>
-      
-      <div className="flex justify-between w-full">
+    <div className={cn("w-full px-4", className)}>
+      <div className="flex justify-between items-center">
         {stages.map((stage, index) => {
           const Icon = stage.icon;
-          const isActive = index <= currentStage;
-          
+          const isCompleted = index < currentStage;
+          const isCurrent = index === currentStage;
+
           return (
             <div
               key={index}
-              className={cn(
-                "transition-all duration-300 transform",
-                isActive ? "text-primary scale-110" : "text-gray-300"
-              )}
-              title={stage.label}
+              className="flex flex-col items-center"
             >
-              <Icon className="w-6 h-6" />
+              <div
+                className={cn(
+                  "rounded-full p-2",
+                  isCompleted
+                    ? "bg-primary text-primary-foreground"
+                    : isCurrent
+                    ? "bg-primary/20 text-primary"
+                    : "bg-muted text-muted-foreground"
+                )}
+              >
+                <Icon className="w-5 h-5" />
+              </div>
             </div>
           );
         })}
       </div>
     </div>
   );
-};
+}
