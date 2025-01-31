@@ -102,9 +102,6 @@ const Index = () => {
                 <Bot className="w-5 h-5" />
               </button>
             </div>
-            <div className="mt-3 text-center text-sm text-gray-500">
-              Press Enter to send your message
-            </div>
           </div>
         </div>
 
