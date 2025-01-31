@@ -2,7 +2,7 @@ import { useState } from "react";
 import { FactBubble } from "@/components/FactBubble";
 import { ProgressBar } from "@/components/ProgressBar";
 import { ChatMessage } from "@/components/ChatMessage";
-import { MessageSquare, Sparkles, Send } from "lucide-react";
+import { MessageSquare, Sparkles, Bot } from "lucide-react";
 import { VerticalProgressBar } from "@/components/VerticalProgressBar";
 import { NoteTaking } from "@/components/NoteTaking";
 import { EmailForm } from "@/components/EmailForm";
@@ -99,7 +99,7 @@ const Index = () => {
                 className="flex-1 p-4 pl-12 rounded-full border border-gray-200 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all bg-transparent"
               />
               <button className="bg-primary text-white p-4 rounded-full hover:bg-primary/90 transition-colors flex items-center gap-2">
-                <Send className="w-5 h-5" />
+                <Bot className="w-5 h-5" />
               </button>
             </div>
             <div className="mt-2 text-center text-sm text-gray-500">
