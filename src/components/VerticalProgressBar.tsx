@@ -1,4 +1,4 @@
-import { House, CircleCheck, LightBulb, Tree, User, Banknote } from "lucide-react";
+import { House, CircleCheck, Lightbulb, Trees, User, Banknote } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface VerticalProgressBarProps {
@@ -8,8 +8,8 @@ interface VerticalProgressBarProps {
 const stages = [
   { icon: House, label: "Startup Information" },
   { icon: Banknote, label: "Shareholding" },
-  { icon: Tree, label: "Vesting Agreements" },
-  { icon: LightBulb, label: "Intellectual Property" },
+  { icon: Trees, label: "Vesting Agreements" },
+  { icon: Lightbulb, label: "Intellectual Property" },
   { icon: User, label: "Employment Agreements" },
   { icon: CircleCheck, label: "Closing Details" },
 ];
