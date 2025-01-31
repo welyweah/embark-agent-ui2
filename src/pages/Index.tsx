@@ -22,16 +22,36 @@ const suggestions = [
 ];
 
 const Index = () => {
-  const [messages] = useState([
+  const [messages, setMessages] = useState([
     { text: "Hello! How can I help you today?", isUser: false },
     { text: "I need help with my project.", isUser: true },
     { text: "I'd be happy to help! What kind of project are you working on?", isUser: false },
   ]);
-
+  const [inputValue, setInputValue] = useState("");
   const [facts, setFacts] = useState(initialFacts);
 
   const handleDismissFact = (index: number) => {
     setFacts(facts.filter((_, i) => i !== index));
+  };
+
+  const handleSendMessage = () => {
+    if (inputValue.trim()) {
+      setMessages([...messages, { text: inputValue, isUser: true }]);
+      setInputValue("");
+      // Simulate AI response
+      setTimeout(() => {
+        setMessages(prev => [...prev, {
+          text: "I understand. Could you tell me more about your specific needs?",
+          isUser: false
+        }]);
+      }, 1000);
+    }
+  };
+
+  const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      handleSendMessage();
+    }
   };
 
   return (
@@ -85,6 +105,9 @@ const Index = () => {
                 <button
                   key={index}
                   className="px-5 py-2.5 text-sm bg-secondary text-secondary-foreground rounded-full hover:bg-secondary/80 transition-all duration-300 hover:shadow-md"
+                  onClick={() => {
+                    setInputValue(suggestion);
+                  }}
                 >
                   {suggestion}
                 </button>
@@ -99,8 +122,14 @@ const Index = () => {
                 type="text"
                 placeholder="Lets build your amazing startup 🚀"
                 className="flex-1 p-4 pl-12 rounded-full border border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all bg-background shadow-sm hover:shadow-md"
+                value={inputValue}
+                onChange={(e) => setInputValue(e.target.value)}
+                onKeyPress={handleKeyPress}
               />
-              <button className="bg-primary text-primary-foreground p-4 rounded-full hover:bg-primary/90 transition-all duration-300 flex items-center gap-2 shadow-lg hover:shadow-xl hover:scale-105">
+              <button 
+                className="bg-primary text-primary-foreground p-4 rounded-full hover:bg-primary/90 transition-all duration-300 flex items-center gap-2 shadow-lg hover:shadow-xl hover:scale-105"
+                onClick={handleSendMessage}
+              >
                 <Bot className="w-5 h-5" />
               </button>
             </div>
