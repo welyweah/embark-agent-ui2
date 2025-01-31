@@ -52,7 +52,7 @@ export const VerticalProgressBar = ({ progress }: VerticalProgressBarProps) => {
                     isActive ? "bg-green-500" : "bg-green-200"
                   )} />
                 </div>
-                <Icon className="w-5 h-5" />
+                <Icon className="w-7 h-7" /> {/* Increased icon size from w-5 h-5 to w-7 h-7 */}
                 <span className="text-sm">{stage.label}</span>
               </div>
             );
