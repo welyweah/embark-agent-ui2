@@ -6,7 +6,6 @@ import { MessageSquare, Sparkles, Bot } from "lucide-react";
 import { VerticalProgressBar } from "@/components/VerticalProgressBar";
 import { NoteTaking } from "@/components/NoteTaking";
 import { EmailForm } from "@/components/EmailForm";
-import { ThemeToggle } from "@/components/theme-toggle";
 
 const initialFacts = [
   "Welcome to fact bubbles, we are here to help you throughout the process so you focus on building your exciting start-up :)",
@@ -56,7 +55,6 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background relative">
-      <ThemeToggle />
       <div className="relative z-10 flex justify-between">
         {/* Left sidebar with facts */}
         <div className="w-72 p-8 hidden lg:flex flex-col gap-8">
