@@ -39,7 +39,7 @@ const Index = () => {
       <div 
         className="absolute inset-0 z-0"
         style={{
-          backgroundImage: "url('https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d')",
+          backgroundImage: "url('https://images.unsplash.com/photo-1553877522-43269d4ea984')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           opacity: 0.05
