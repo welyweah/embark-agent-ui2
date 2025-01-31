@@ -20,32 +20,35 @@ export function ProgressBar({ progress = 0, className }: ProgressBarProps) {
 
   return (
     <div className={cn("w-full px-4 pt-6", className)}>
-      <div className="flex justify-between items-center">
-        {stages.map((stage, index) => {
-          const Icon = stage.icon;
-          const isCompleted = index < currentStage;
-          const isCurrent = index === currentStage;
+      <div className="flex flex-col">
+        <div className="flex justify-between items-center">
+          {stages.map((stage, index) => {
+            const Icon = stage.icon;
+            const isCompleted = index < currentStage;
+            const isCurrent = index === currentStage;
 
-          return (
-            <div
-              key={index}
-              className="flex flex-col items-center"
-            >
+            return (
               <div
-                className={cn(
-                  "rounded-full p-2",
-                  isCompleted
-                    ? "bg-primary text-primary-foreground"
-                    : isCurrent
-                    ? "bg-primary/20 text-primary"
-                    : "bg-muted text-muted-foreground"
-                )}
+                key={index}
+                className="flex flex-col items-center"
               >
-                <Icon className="w-5 h-5" />
+                <div
+                  className={cn(
+                    "rounded-full p-2",
+                    isCompleted
+                      ? "bg-primary text-primary-foreground"
+                      : isCurrent
+                      ? "bg-primary/20 text-primary"
+                      : "bg-muted text-muted-foreground"
+                  )}
+                >
+                  <Icon className="w-5 h-5" />
+                </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
+        <div className="h-px bg-gray-200 w-full mt-6" />
       </div>
     </div>
   );
