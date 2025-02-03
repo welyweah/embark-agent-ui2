@@ -2,10 +2,12 @@ import { useState } from "react";
 import { FactBubble } from "@/components/FactBubble";
 import { ProgressBar } from "@/components/ProgressBar";
 import { ChatMessage } from "@/components/ChatMessage";
-import { Bot, Sparkles } from "lucide-react";
+import { Bot, Sparkles, ArrowRight } from "lucide-react";
 import { VerticalProgressBar } from "@/components/VerticalProgressBar";
 import { NoteTaking } from "@/components/NoteTaking";
 import { EmailForm } from "@/components/EmailForm";
+import { Button } from "@/components/ui/button";
+import { useToast } from "@/components/ui/use-toast";
 
 const initialFacts = [
   "Welcome to fact bubbles, we are here to help you throughout the process so you focus on building your exciting start-up :)",
@@ -28,6 +30,7 @@ const Index = () => {
   ]);
   const [inputValue, setInputValue] = useState("");
   const [facts, setFacts] = useState(initialFacts);
+  const { toast } = useToast();
 
   const handleDismissFact = (index: number) => {
     setFacts(facts.filter((_, i) => i !== index));
@@ -50,6 +53,13 @@ const Index = () => {
     if (e.key === "Enter") {
       handleSendMessage();
     }
+  };
+
+  const handleExpertClick = () => {
+    toast({
+      title: "Connecting to Expert",
+      description: "You will be connected with an Embark.LAW expert shortly.",
+    });
   };
 
   return (
@@ -87,7 +97,7 @@ const Index = () => {
           {/* Progress Bar */}
           <ProgressBar progress={65} className="mt-2" />
 
-          {/* Chat messages - Only showing the latest message */}
+          {/* Chat messages */}
           <div className="flex-1 overflow-y-auto p-8 bg-gradient-to-b from-white/50 to-white/30">
             {messages.length > 0 && (
               <ChatMessage
@@ -140,6 +150,13 @@ const Index = () => {
         <div className="w-96 p-8 hidden xl:flex flex-col gap-8">
           <VerticalProgressBar progress={65} />
           <NoteTaking />
+          <Button
+            onClick={handleExpertClick}
+            className="w-full py-6 text-lg font-medium bg-primary hover:bg-primary/90 text-white shadow-lg hover:shadow-xl transition-all duration-300"
+          >
+            Continue with Embark.LAW Expert
+            <ArrowRight className="ml-2" />
+          </Button>
           <EmailForm />
         </div>
       </div>
