@@ -151,7 +151,7 @@ const Index = () => {
           <VerticalProgressBar progress={65} />
           <Button
             onClick={handleExpertClick}
-            className="w-full py-6 text-lg font-medium bg-primary hover:bg-primary/90 text-white shadow-lg hover:shadow-xl transition-all duration-300"
+            className="w-full py-6 text-base font-medium bg-primary hover:bg-primary/90 text-white shadow-lg hover:shadow-xl transition-all duration-300"
           >
             Continue with Embark.LAW Expert
             <ArrowRight className="ml-2" />
