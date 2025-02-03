@@ -149,7 +149,6 @@ const Index = () => {
         {/* Right sidebar */}
         <div className="w-96 p-8 hidden xl:flex flex-col gap-8">
           <VerticalProgressBar progress={65} />
-          <NoteTaking />
           <Button
             onClick={handleExpertClick}
             className="w-full py-6 text-lg font-medium bg-primary hover:bg-primary/90 text-white shadow-lg hover:shadow-xl transition-all duration-300"
@@ -157,6 +156,7 @@ const Index = () => {
             Continue with Embark.LAW Expert
             <ArrowRight className="ml-2" />
           </Button>
+          <NoteTaking />
           <EmailForm />
         </div>
       </div>
