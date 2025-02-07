@@ -2,7 +2,7 @@ import { useState } from "react";
 import { FactBubble } from "@/components/FactBubble";
 import { ProgressBar } from "@/components/ProgressBar";
 import { ChatMessage } from "@/components/ChatMessage";
-import { Bot, Sparkles, ArrowRight } from "lucide-react";
+import { Bot, Sparkles, ArrowRight, Rocket } from "lucide-react";
 import { VerticalProgressBar } from "@/components/VerticalProgressBar";
 import { NoteTaking } from "@/components/NoteTaking";
 import { EmailForm } from "@/components/EmailForm";
@@ -65,7 +65,6 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background relative">
       <div className="relative z-10 flex justify-between">
-        {/* Left sidebar with facts */}
         <div className="w-72 p-8 hidden lg:flex flex-col gap-8">
           {facts.map((fact, index) => (
             <FactBubble 
@@ -75,29 +74,18 @@ const Index = () => {
             />
           ))}
         </div>
-
-        {/* Main chat area */}
         <div className="flex-1 flex flex-col max-w-4xl bg-white/50 backdrop-blur-sm shadow-lg rounded-lg mx-4 my-4">
-          {/* Header */}
           <div className="p-6 flex items-center border-b border-gray-100">
             <div className="flex items-center gap-4">
               <div className="p-2 bg-primary/5 rounded-lg transition-transform duration-300 hover:scale-105">
-                <img
-                  src="/lovable-uploads/c1ded814-b1d4-457e-846e-52388a54eff8.png"
-                  alt="Embark Law"
-                  className="h-12 w-12"
-                />
+                <Rocket className="h-12 w-12 text-primary" />
               </div>
               <span className="text-2xl font-semibold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
                 Startup Agent
               </span>
             </div>
           </div>
-
-          {/* Progress Bar */}
           <ProgressBar progress={65} className="mt-2" />
-
-          {/* Chat messages */}
           <div className="flex-1 overflow-y-auto p-8 bg-gradient-to-b from-white/50 to-white/30">
             {messages.length > 0 && (
               <ChatMessage
@@ -106,10 +94,7 @@ const Index = () => {
               />
             )}
           </div>
-
-          {/* Input area */}
           <div className="p-6 bg-white/70 backdrop-blur-md rounded-b-lg border-t border-gray-100">
-            {/* Suggestion bubbles */}
             <div className="flex flex-wrap gap-3 mb-6 justify-center">
               {suggestions.map((suggestion, index) => (
                 <button
@@ -123,7 +108,6 @@ const Index = () => {
                 </button>
               ))}
             </div>
-
             <div className="flex gap-4 items-center max-w-3xl mx-auto relative">
               <div className="absolute left-4 text-primary/60">
                 <Sparkles className="w-5 h-5" />
@@ -145,8 +129,6 @@ const Index = () => {
             </div>
           </div>
         </div>
-
-        {/* Right sidebar */}
         <div className="w-96 p-8 hidden xl:flex flex-col gap-8">
           <VerticalProgressBar progress={65} />
           <Button
