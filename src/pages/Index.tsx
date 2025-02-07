@@ -75,11 +75,11 @@ const Index = () => {
             />
           ))}
         </div>
-        <div className="flex-1 flex flex-col max-w-4xl bg-white/50 backdrop-blur-sm shadow-lg rounded-lg mx-4 my-4">
-          <div className="p-6 flex items-center border-b border-gray-100">
+        <div className="flex-1 flex flex-col max-w-4xl bg-white/50 backdrop-blur-sm shadow-xl rounded-2xl mx-4 my-4 border border-white/20">
+          <div className="p-6 flex items-center border-b border-gray-100/50">
             <div className="flex items-center gap-4">
-              <div className="p-2 bg-primary/5 rounded-lg transition-transform duration-300 hover:scale-105">
-                <Rocket className="h-12 w-12 text-primary" />
+              <div className="p-3 bg-primary/10 rounded-2xl transition-all duration-300 hover:scale-105 hover:bg-primary/15 group">
+                <Rocket className="h-10 w-10 text-primary transition-all duration-300 group-hover:rotate-12" />
               </div>
               <span className="text-2xl font-semibold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
                 Ember - Your Startup AI Lawyer
@@ -88,19 +88,21 @@ const Index = () => {
           </div>
           <ProgressBar progress={65} className="mt-2" />
           <div className="flex-1 overflow-y-auto p-8 bg-gradient-to-b from-white/50 to-white/30">
-            {messages.length > 0 && (
-              <ChatMessage
-                message={messages[messages.length - 1].text}
-                isUser={messages[messages.length - 1].isUser}
-              />
-            )}
+            {messages.map((message, index) => (
+              <div key={index} className="animate-fade-in">
+                <ChatMessage
+                  message={message.text}
+                  isUser={message.isUser}
+                />
+              </div>
+            ))}
           </div>
-          <div className="p-6 bg-white/70 backdrop-blur-md rounded-b-lg border-t border-gray-100">
+          <div className="p-6 bg-white/70 backdrop-blur-md rounded-b-2xl border-t border-gray-100/50">
             <div className="flex flex-wrap gap-2 mb-3 justify-center">
               {suggestions.map((suggestion, index) => (
                 <button
                   key={index}
-                  className="px-4 py-2 text-sm bg-white/80 hover:bg-white text-gray-700 rounded-full hover:shadow-md transition-all duration-300 border border-gray-100"
+                  className="px-4 py-2 text-sm bg-white/80 hover:bg-white text-gray-700 rounded-full hover:shadow-md transition-all duration-300 border border-gray-100/50 hover:border-primary/20 hover:scale-105 active:scale-95"
                   onClick={() => {
                     setInputValue(suggestion);
                   }}
@@ -111,7 +113,7 @@ const Index = () => {
             </div>
             <div className="flex gap-4 items-center max-w-3xl mx-auto relative">
               <div className="absolute left-4 text-primary/60">
-                <Sparkles className="w-5 h-5" />
+                <Sparkles className="w-5 h-5 animate-pulse" />
               </div>
               <input
                 type="text"
@@ -122,10 +124,10 @@ const Index = () => {
                 onKeyPress={handleKeyPress}
               />
               <button 
-                className="bg-primary text-white p-4 rounded-full hover:bg-primary/90 transition-all duration-300 flex items-center gap-2 shadow-lg hover:shadow-xl hover:scale-105 active:scale-95"
+                className="bg-primary text-white p-4 rounded-full hover:bg-primary/90 transition-all duration-300 flex items-center gap-2 shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 group"
                 onClick={handleSendMessage}
               >
-                <Bot className="w-5 h-5" />
+                <Bot className="w-5 h-5 transition-transform duration-300 group-hover:rotate-12" />
               </button>
             </div>
           </div>
@@ -134,10 +136,10 @@ const Index = () => {
           <VerticalProgressBar progress={65} />
           <Button
             onClick={handleExpertClick}
-            className="w-full py-6 text-base font-medium bg-primary hover:bg-primary/90 text-white shadow-lg hover:shadow-xl transition-all duration-300"
+            className="w-full py-6 text-base font-medium bg-primary hover:bg-primary/90 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 active:scale-95 rounded-xl"
           >
             Continue with Embark.LAW Expert
-            <ArrowRight className="ml-2" />
+            <ArrowRight className="ml-2 transition-transform duration-300 group-hover:translate-x-1" />
           </Button>
           <NoteTaking />
           <EmailForm />
