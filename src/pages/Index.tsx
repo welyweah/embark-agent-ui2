@@ -2,7 +2,7 @@ import { useState } from "react";
 import { FactBubble } from "@/components/FactBubble";
 import { ProgressBar } from "@/components/ProgressBar";
 import { ChatMessage } from "@/components/ChatMessage";
-import { Bot, Sparkles } from "lucide-react";
+import { Bot, Sparkles, ArrowRight } from "lucide-react";
 import { VerticalProgressBar } from "@/components/VerticalProgressBar";
 import { NoteTaking } from "@/components/NoteTaking";
 import { EmailForm } from "@/components/EmailForm";
@@ -154,7 +154,7 @@ const Index = () => {
             className="w-full py-6 text-base font-medium bg-primary hover:bg-primary/90 text-white shadow-lg hover:shadow-xl transition-all duration-300"
           >
             Continue with Embark.LAW Expert
-            <Bot className="ml-2 w-5 h-5" />
+            <ArrowRight className="ml-2" />
           </Button>
           <NoteTaking />
           <EmailForm />
