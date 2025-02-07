@@ -1,4 +1,6 @@
 
+import { Rocket } from "lucide-react";
+
 interface ChatMessageProps {
   message: string;
   isUser: boolean;
