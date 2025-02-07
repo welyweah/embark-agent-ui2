@@ -65,13 +65,6 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background relative">
-      <div className="absolute top-4 left-4 z-20">
-        <img 
-          src="/lovable-uploads/bcf6bd46-ef17-43c4-a01c-0f5a8c261e3e.png" 
-          alt="Embark Law Logo" 
-          className="w-24 h-24 object-contain"
-        />
-      </div>
       <div className="relative z-10 flex justify-between">
         <div className="w-72 p-8 hidden lg:flex flex-col gap-8">
           {facts.map((fact, index) => (
