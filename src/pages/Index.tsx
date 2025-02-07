@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { FactBubble } from "@/components/FactBubble";
 import { ProgressBar } from "@/components/ProgressBar";
@@ -64,13 +65,8 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background relative">
-      <div className="relative z-10 flex justify-between pt-8">
+      <div className="relative z-10 flex justify-between">
         <div className="w-72 p-8 hidden lg:flex flex-col gap-8">
-          <img 
-            src="/lovable-uploads/678273c0-a616-478b-95b4-7c84ad662b9c.png"
-            alt="Embark.LAW Logo"
-            className="w-32 h-32 object-contain mb-4"
-          />
           {facts.map((fact, index) => (
             <FactBubble 
               key={index} 
@@ -79,7 +75,7 @@ const Index = () => {
             />
           ))}
         </div>
-        <div className="flex-1 flex flex-col max-w-4xl bg-white/50 backdrop-blur-sm shadow-xl rounded-2xl mx-4 mt-16 border border-white/20">
+        <div className="flex-1 flex flex-col max-w-4xl bg-white/50 backdrop-blur-sm shadow-xl rounded-2xl mx-4 my-4 border border-white/20">
           <div className="p-6 flex items-center border-b border-gray-100/50">
             <div className="flex items-center gap-4">
               <div className="p-3 bg-primary/10 rounded-2xl transition-all duration-300 hover:scale-105 hover:bg-primary/15 group">
@@ -128,7 +124,7 @@ const Index = () => {
                 onKeyPress={handleKeyPress}
               />
               <button 
-                className="bg-primary text-white p-4 rounded-full hover:bg-primary/90 transition-all duration-300 flex items-center gap-2 shadow-lg hover:shadow-xl hover:scale-105 active:scale-95"
+                className="bg-primary text-white p-4 rounded-full hover:bg-primary/90 transition-all duration-300 flex items-center gap-2 shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 group"
                 onClick={handleSendMessage}
               >
                 <Bot className="w-5 h-5 transition-transform duration-300 group-hover:rotate-12" />
