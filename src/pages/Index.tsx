@@ -102,7 +102,7 @@ const Index = () => {
               {suggestions.map((suggestion, index) => (
                 <button
                   key={index}
-                  className="px-4 py-2 text-sm bg-white/80 hover:bg-white text-gray-700 rounded-full hover:shadow-md transition-all duration-300 border border-gray-100/50 hover:border-primary/20 hover:scale-105 active:scale-95"
+                  className="px-4 py-2 text-sm bg-white/80 hover:bg-white text-gray-700 rounded-full hover:shadow-md transition-all duration-300 border border-accent hover:border-accent/50 hover:text-accent hover:scale-105 active:scale-95"
                   onClick={() => {
                     setInputValue(suggestion);
                   }}
