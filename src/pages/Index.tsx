@@ -73,7 +73,7 @@ const Index = () => {
         />
       </div>
       <div className="relative z-10 flex justify-between">
-        <div className="w-72 p-8 hidden lg:flex flex-col gap-8">
+        <div className="w-72 p-8 pt-40 hidden lg:flex flex-col gap-8">
           {facts.map((fact, index) => (
             <FactBubble 
               key={index} 
