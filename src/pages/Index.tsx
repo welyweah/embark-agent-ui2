@@ -96,11 +96,11 @@ const Index = () => {
             )}
           </div>
           <div className="p-6 bg-white/70 backdrop-blur-md rounded-b-lg border-t border-gray-100">
-            <div className="flex flex-wrap gap-3 mb-6 justify-center">
+            <div className="flex flex-wrap gap-2 mb-3 justify-center">
               {suggestions.map((suggestion, index) => (
                 <button
                   key={index}
-                  className="px-5 py-2.5 text-sm bg-white/80 hover:bg-white text-gray-700 rounded-full hover:shadow-md transition-all duration-300 border border-gray-100"
+                  className="px-4 py-2 text-sm bg-white/80 hover:bg-white text-gray-700 rounded-full hover:shadow-md transition-all duration-300 border border-gray-100"
                   onClick={() => {
                     setInputValue(suggestion);
                   }}
