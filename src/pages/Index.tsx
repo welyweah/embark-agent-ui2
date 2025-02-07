@@ -66,16 +66,20 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background relative">
       <div className="relative z-10 flex justify-between">
-        <div className="w-72 p-8 hidden lg:flex flex-col gap-8">
-          {facts.map((fact, index) => (
-            <FactBubble 
-              key={index} 
-              fact={fact} 
-              onDismiss={() => handleDismissFact(index)}
-            />
-          ))}
-        </div>
-        <div className="flex-1 flex flex-col max-w-4xl bg-white/50 backdrop-blur-sm shadow-xl rounded-2xl mx-4 my-4 border border-white/20">
+        {facts.length > 0 ? (
+          <div className="w-72 p-8 hidden lg:flex flex-col gap-8">
+            {facts.map((fact, index) => (
+              <FactBubble 
+                key={index} 
+                fact={fact} 
+                onDismiss={() => handleDismissFact(index)}
+              />
+            ))}
+          </div>
+        ) : (
+          <div className="hidden lg:block w-8" /> // Minimal space when facts are hidden
+        )}
+        <div className={`flex-1 flex flex-col max-w-4xl bg-white/50 backdrop-blur-sm shadow-xl rounded-2xl mx-4 my-4 border border-white/20 transition-all duration-300 ${facts.length === 0 ? 'lg:ml-8' : ''}`}>
           <div className="p-6 flex items-center border-b border-gray-100/50">
             <div className="flex items-center gap-4">
               <div className="p-3 bg-primary/10 rounded-2xl transition-all duration-300 hover:scale-105 hover:bg-primary/15 group">
