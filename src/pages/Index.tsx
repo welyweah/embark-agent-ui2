@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { FactBubble } from "@/components/FactBubble";
 import { ProgressBar } from "@/components/ProgressBar";
@@ -81,7 +82,7 @@ const Index = () => {
                 <Rocket className="h-12 w-12 text-primary" />
               </div>
               <span className="text-2xl font-semibold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
-                Startup Agent
+                Ember - Your Startup AI Lawyer
               </span>
             </div>
           </div>
