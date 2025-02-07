@@ -1,5 +1,5 @@
 
-import { House, Lightbulb, Trees, User, Banknote } from "lucide-react";
+import { House, Lightbulb, Trees, User, Banknote, Check } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface ProgressBarProps {
@@ -14,7 +14,7 @@ export function ProgressBar({ progress = 0, className }: ProgressBarProps) {
     { name: "Vesting Agreements", icon: Trees },
     { name: "Intellectual Property", icon: Lightbulb },
     { name: "Employment Agreements", icon: User },
-    { name: "Closing Details", icon: House },
+    { name: "Closing Details", icon: Check },
   ];
 
   const currentStage = Math.floor((progress / 100) * stages.length);
